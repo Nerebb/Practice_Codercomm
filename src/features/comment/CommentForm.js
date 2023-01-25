@@ -7,11 +7,16 @@ import useAuth from "../../hooks/useAuth";
 import { useDispatch } from "react-redux";
 import { createComment, editComment } from "./commentSlice";
 import { toast } from "react-toastify";
+import { useEffect } from "react";
 
-function CommentForm({ comment, postId, type = "Default",setIsEdit }) {
+function CommentForm({ comment, postId, type = "Default", setIsEdit }) {
   const { user } = useAuth();
   const [content, setContent] = useState("");
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (type === "Edit" && comment.content) setContent(comment.content);
+  }, [type, comment]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,7 +26,7 @@ function CommentForm({ comment, postId, type = "Default",setIsEdit }) {
         break;
       case "Edit":
         dispatch(editComment({ commentId: comment._id, postId, content }));
-        setIsEdit(false)
+        setIsEdit(false);
         break;
       default:
         return toast.error("Unknow request");
