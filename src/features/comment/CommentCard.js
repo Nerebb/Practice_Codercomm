@@ -6,7 +6,6 @@ import CommentBtn from "./CommentBtn";
 import { useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import { useDispatch } from "react-redux";
-import { deleteComment } from "./commentSlice";
 import CommentForm from "./CommentForm";
 import { DELETE_COMMENT, openModal } from "../modal/modalSlice";
 

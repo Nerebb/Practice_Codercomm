@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Box, Typography } from "@mui/material";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import PostCard from "./PostCard";
-import { deletePost, getPosts } from "./postSlice";
+import { getPosts } from "./postSlice";
 
 function PostList({ userId }) {
   const [page, setPage] = useState(1);
@@ -22,12 +22,7 @@ function PostList({ userId }) {
   return (
     <>
       {posts.map((post) => (
-        <PostCard
-          key={post._id}
-          post={post}
-          userId={userId}
-          page={page}
-        />
+        <PostCard key={post._id} post={post} userId={userId} page={page} />
       ))}
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         {totalPosts ? (

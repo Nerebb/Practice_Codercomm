@@ -1,4 +1,4 @@
-import React, { setState } from "react";
+import React from "react";
 import {
   Box,
   Link,
@@ -16,8 +16,7 @@ import CommentForm from "../comment/CommentForm";
 import CommentList from "../comment/CommentList";
 import ActionPostBtn from "./ActionPostBtn";
 import useAuth from "../../hooks/useAuth";
-import { deletePost } from "./postSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useState } from "react";
 import PostForm from "./PostForm";
 import { DELETE_POST, openModal } from "../modal/modalSlice";

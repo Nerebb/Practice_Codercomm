@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import { Pagination, Stack, Typography } from "@mui/material";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
-import { deleteComment, editComment, getComments } from "./commentSlice";
+import { getComments } from "./commentSlice";
 import CommentCard from "./CommentCard";
 import LoadingScreen from "../../components/LoadingScreen";
 import { COMMENTS_PER_POST } from "../../app/config";

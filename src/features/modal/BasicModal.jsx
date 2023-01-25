@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { closeModal, confirmAction, DELETE_COMMENT } from "./modalSlice";
+import { closeModal, confirmAction } from "./modalSlice";
 import { Stack } from "@mui/material";
 import { toast } from "react-toastify";
 
@@ -31,7 +31,7 @@ export default function BasicModal() {
     dispatch(closeModal());
   };
   const handleConfirm = () => {
-    dispatch(confirmAction({type, reqData}));
+    dispatch(confirmAction({ type, reqData }));
   };
 
   return (

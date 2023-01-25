@@ -1,6 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { toast } from "react-toastify";
-import apiService from "../../app/apiService";
 import { deleteComment } from "../comment/commentSlice";
 import { deletePost } from "../post/postSlice";
 
